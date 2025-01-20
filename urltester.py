@@ -1,4 +1,4 @@
-import subprocess , os , http.client , json
+import subprocess , http.client , json
 
 mainUrl = '0.0.0.0:9000'
 class bcolors:
@@ -14,9 +14,6 @@ class bcolors:
     AMARELO = '\033[0;33m'  
     PADRAO = '\033[0m'      
     VERMELHO = '\033[0;31m'  
-
-subprocess.run("bash -c 'source /home/vinicius/caaorg/virtual_caa/bin/activate'", shell=True , check=True)
-os.system('cd /home/vinicius/caaorg/caaorg-gitclone/caaorg')
 
 
 output = subprocess.run("bash -c 'python manage.py show_urls --format=pretty-json'", shell=True , check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
